@@ -1,0 +1,140 @@
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+*.pot
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+
+.env
+db.sqlite3
+
+# for vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# for linux
+     $ git status
+               [...]
+               # Untracked files:
+               [...]
+               #       Documentation/foo.html
+               #       Documentation/gitignore.html
+               #       file.o
+               #       lib.a
+               #       src/internal.o
+               [...]
+               $ cat .git/info/exclude
+               # ignore objects and archives, anywhere in the tree.
+               *.[oa]
+               $ cat Documentation/.gitignore
+               # ignore generated html files,
+               *.html
+               # except foo.html which is maintained by hand
+               !foo.html
+               $ git status
+               [...]
+               # Untracked files:
+               [...]
+               #       Documentation/foo.html
+               [...]
+
+       Another example:
+
+               $ cat .gitignore
+               vmlinux*
+               $ ls arch/foo/kernel/vm*
+               arch/foo/kernel/vmlinux.lds.S
+               $ echo '!/vmlinux*' >arch/foo/kernel/.gitignore
+
+       The second .gitignore prevents Git from ignoring arch/foo/kernel/vmlinux.lds.S.
+
+       Example to exclude everything except a specific directory foo/bar (note the /* - without
+       the slash, the wildcard would also exclude everything within foo/bar):
+
+               $ cat .gitignore
+               # exclude everything except directory foo/bar
+               /*
+               !/foo
+               /foo/*
+               !/foo/bar
