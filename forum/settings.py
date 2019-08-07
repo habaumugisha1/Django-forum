@@ -28,10 +28,14 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
     'board',
+    'accounts',
+    'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -120,3 +124,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_DIR =os.path.join(BASE_DIR, 'static')
+
+
+
+LOGOUT_RIDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'home'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+CRISPY_TEMPLATE_PACK = 'bootstrap 4'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
