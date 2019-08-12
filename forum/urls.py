@@ -17,12 +17,19 @@ from django.conf.urls import url
 from django.contrib import admin
 from accounts import views as accounts_views
 from django.contrib.auth import views as auth_views
+from accounts import views as accounts_views
 from board import views 
 
 urlpatterns = [
+    url(r'^settings/account/$', accounts_views.UserUpdateView.as_view(), name='my_account'),
+    url(r'^new_post/$', views.NewPostView.as_view(), name='new_post'),
+    url(r'^new_post/$', views.new_post, name='new_post'),
+    url(r'^boards/(?P<pk>\d+)/topic/(?P<topic_pk>\d+)/reply/$', views.reply_topic, name='reply_topic'),
+    url(r'^boards/(?P<pk>\d+)/topic/(?P<topic_pk>\d+)/$', views.topic_posts, name='topic_posts'),
+
     url(r'^settings/password/done/$', auth_views.PasswordChangeDoneView.as_view(template_name='password_change_done.html'),
     name='password_change_done'),
-    
+
     url(r'^settings/password/$', auth_views.PasswordChangeView.as_view(template_name='password_change.html'),
     name='password_change'),
 
